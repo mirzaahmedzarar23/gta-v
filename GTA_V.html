@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAZ</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E6E6FA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .alert {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .free-button {
+            background-color: #2196F3; /* Blue color for free button */
+        }
+
+        .paid-button {
+            background-color: #4CAF50; /* Green color for paid button */
+        }
+
+        .hidden {
+            display: none; /* Initially hide the buttons */
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var enteredPassword = document.getElementById("password").value;
+            var correctPassword = "8462";
+            var alertMessage = document.getElementById("alert-message");
+
+            // Check if password is correct
+            if (enteredPassword === correctPassword) {
+                // Hide alert message and show the buttons
+                alertMessage.style.display = "none";  
+                document.getElementById("free-button").classList.remove("hidden");
+                document.getElementById("paid-button").classList.remove("hidden");
+            } else {
+                alertMessage.textContent = "Incorrect password. Please try again.";
+                alertMessage.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>MAZ</h2>
+        <h3>GTA V</h3>
+        <p>Please enter the password to download GTA V</p>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+
+        <!-- Free Button (Initially hidden) -->
+        <a id="free-button" href="file:///D:/Code/Game/gta5.html" target="_blank" class="hidden">
+            <button class="free-button">Free Download</button>
+        </a>
+
+        <!-- Paid Button (Initially hidden) -->
+        <a id="paid-button" href="https://www.rockstargames.com/gta-v" target="_blank" class="hidden">
+            <button class="paid-button">Paid Version</button>
+        </a>
+
+        <p id="alert-message" class="alert" style="display:none;"></p>
+        <p>(All rights reserved by Rockstar Games and Mirza Ahmed Zarar)</p>
+    </div>
+</body>
+</html>
